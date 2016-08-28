@@ -1,0 +1,98 @@
+<!doctype html>
+<html><head>
+    <meta charset="utf-8">
+    <title>Cognition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Faraz Ahmed">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+
+	
+
+    <style type="text/css">
+      body {
+        padding-top: 30px;
+      }
+    </style>
+
+  
+  
+  
+</head>
+  <body>
+
+    <div class="container">
+        <div class="row">
+   		<div class="col-lg-offset-4 col-lg-4" style="margin-top:100px">
+   			<div class="block-unit" style="text-align:center; padding:8px 8px 8px 8px;">
+   				<img src="img/photo03.jpg" alt="" class="img-circle">
+   				<br>
+   				<br>
+					<form class="cmxform" id="signinForm" method="get" action="">
+						<fieldset>
+							<p>
+								<input id="username" name="username" type="text" placeholder="Username">
+								<input id="password" name="password" type="password" placeholder="Password">
+							</p>
+								<input class="submit btn-success btn btn-large" type="submit" value="Login">
+						</fieldset>
+					</form>
+   			</div>
+
+   		</div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+			<!-- Jquery Validate Script -->
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+
+  	<!-- Jquery Validate Script - Validation Fields -->
+		<script type="text/javascript">
+		$.validator.setDefaults({
+			submitHandler: function() { window.open ('dashboard.html','_self',false) }
+		});
+		
+		$().ready(function() {
+		
+			// validate signup form on keyup and submit
+			$("#signinForm").validate({
+				rules: {
+					username: {
+						required: true,
+						minlength: 1
+					},
+					password: {
+						required: true,
+						minlength: 1
+					}
+				},
+				messages: {
+					username: {
+						required: "Please enter a username",
+						minlength: "Your username must consist of at least 1 character"
+					},
+					password: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 1 character long"
+					}
+				}
+			});
+		
+			
+		});
+		</script>
+  
+  
+</body></html>

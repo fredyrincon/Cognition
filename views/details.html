@@ -1,0 +1,125 @@
+<!doctype html>
+<html ng-app="goalHandler">
+	
+<head>
+    <meta charset="utf-8">
+    <title>Performance Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Faraz Ahmed">
+
+    
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/font-style.css" rel="stylesheet">
+    <link href="css/flexslider.css" rel="stylesheet">
+    
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    
+</head>
+<body>
+  
+<div class="navbar-nav navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html"><img src="img/logo30.png" alt=""> Performance Management Dashboard</a>
+        </div>    
+    </div>
+
+<div class="container" ng-controller="mainController">
+
+	  <!-- FIRST ROW OF BLOCKS -->     
+    	
+		<div class="jumbotron text-center">
+			
+			
+			<div class="row">
+
+     			<!-- USER PROFILE BLOCK -->
+				<div class="col-sm-4">
+					<div class="dash-unit-extended">
+						<dtitle>Employee 1</dtitle>
+						<hr>				
+						<img src="img/face80x80.jpg" alt="Marcel Newman" class="img-circle">						
+							
+						<h1>Marcel Newman</h1>
+						<h3>Software developer</h3>
+					</div>
+						
+							
+					<br>											
+				</div>
+			</div><!-- /row -->
+	         
+			
+			<div class="row goal-unit">			
+				<h1>Goals <span class="label label-info">{{ goals.length }}</span></h1>			
+			</div>
+			
+			  <!-- FORM TO CREATE Goals -->
+        	<div id="goal-form" class="row">
+            	<div class="col-sm-12 ">
+                	<form>		
+						<div class="row">						
+							<div class="col-sm-10">
+							    <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+								<input type="text" class="input-lg" placeholder="Meet KPI XX" ng-model="formData.text">                 
+							</div>
+							<div class="col-sm-2">
+								<!-- createToDo() WILL CREATE NEW Goals -->
+								<button type="submit" class="btn btn-primary btn-lg" ng-click="createGoal()">Add</button>					
+							</div>
+						</div>                  
+					</form>
+            	</div>
+        	</div>
+		
+		
+			<hr>
+		
+		   <div id="goal-list" >
+            
+                <!-- LOOP OVER THE Goals IN $scope.goals -->
+                <div class="goal-unit" ng-repeat="goal in goals">                    
+					<div class="row">					
+						<div class="col-sm-2">
+							<input type="checkbox" ng-click="deleteGoal(goal._id)">
+						</div>
+						<div class="col-sm-8">
+							<label>{{ goal.text }}</label>						
+						</div>
+						<div class="col-sm-2"></div>										
+					</div>								
+                </div>            
+        	</div>						
+        </div>      
+</div>  
+	
+
+
+
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+	
+	<!-- NOTY JAVASCRIPT -->
+	<script type="text/javascript" src="js/noty/jquery.noty.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/top.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/topLeft.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/topRight.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/topCenter.js"></script>
+	
+	<!-- You can add more layouts if you want -->
+	<script type="text/javascript" src="js/noty/themes/default.js"></script>
+ 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="js/client.js"></script>
+
+  
+</body></html>
