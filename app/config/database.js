@@ -1,5 +1,5 @@
 module.exports = {
-    connectionString: 'mongodb://node:nodepass@jello.modulusmongo.net:27017/duRa3jis'
+    connectionString: 'mongodb://heroku_rc2frpl9:heroku_rc2frpl9@ds019076.mlab.com:19076/heroku_rc2frpl9'
 }
 
 
