@@ -5,4 +5,4 @@
 
 
 # NodeJSMongoDB
-An experiment with the MEAN stack it includes CI
+An experiment with the MEAN stack it includes CI.
